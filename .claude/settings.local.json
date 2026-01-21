@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(dir \"C:\\\\Users\\\\Gio\\\\source\\\\repos\\\\AutoClient\\\\AutoClient\" /B)",
+      "Bash(dotnet ef migrations:*)",
+      "Bash(dotnet ef database:*)",
+      "Bash(dotnet build:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)",
+      "Bash(Get-Process AutoClient -ErrorAction SilentlyContinue)",
+      "Bash(Stop-Process -Force -ErrorAction SilentlyContinue)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ]
+}

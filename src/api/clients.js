@@ -1,3 +1,4 @@
+// src/api/clients.js
 import api from "./axios";
 
 export const getClients = (search = "") =>

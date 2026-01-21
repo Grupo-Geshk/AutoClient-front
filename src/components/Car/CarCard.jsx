@@ -1,19 +1,43 @@
-export default function CarCard({ plateNumber, brand, model }) {
-  return (
-    <div className="bg-white border shadow-sm rounded-xl p-5 flex flex-col gap-1">
-      <div className="text-4xl font-bold text-gray-800">{plateNumber}</div>
+import React, { useState, useEffect } from "react";
+import { getClientById } from "@/api/clients";
 
-      <div className="flex gap-3">
-        <span>
-            <div className="mt-2 text-sm text-gray-500">Marca</div>
-            <div className="text-base text-gray-700">{brand}</div>
-        </span>
-        <span>
-            <div className="mt-2 text-sm text-gray-500">Modelo</div>
-            <div className="text-base text-gray-700">{model}</div>
-        </span>
-        
+export default function CarCard({ plateNumber, brand, model, imageUrl, clientId }) {
+  const [clientName, setClientName] = useState("");
+
+  useEffect(() => {
+    const fetchClient = async () => {
+      const res = await getClientById(clientId);
+      setClientName(res.data.name || "Cliente Desconocido");
+    };
+    fetchClient();
+  }, [clientId]);
+
+  return (
+    <>
+      <div className="cursor-pointer bg-white rounded-xl shadow-lg border hover:shadow-lg transition-transform transform hover:scale-105 overflow-hidden flex flex-col">
+        <div className="h-60 bg-gray-100">
+          <img
+            src={imageUrl || "/default-car-image.jpg"}  
+            alt="Just a car."
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="p-4 flex-1 flex flex-col justify-between">
+          <div className="text-2xl font-bold text-gray-800">{plateNumber}</div>
+          <div className="text-md font-medium text-gray-500">{clientName}</div>
+
+          <div className="flex flex-col">
+            <span>
+              <div className="mt-2 text-sm text-gray-500">Marca y Modelo</div>
+            </span>
+            <span className="flex gap-1 items-center">
+              <div className="bg-slate-200 px-2 rounded-md">{model}</div>
+              <div className="bg-slate-200 px-2 rounded-md">{brand}</div>
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
-  )
+    </>
+  );
 }
