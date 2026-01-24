@@ -1,0 +1,91 @@
+@page { size: A4; margin: 0; }
+.invoice-a4 {
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 14mm 12mm 16mm 12mm;
+  background: #ffffff;
+  color: #0c1632;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.row { display: flex; align-items: center; }
+.between { justify-content: space-between; }
+.mt8 { margin-top: 8px; }
+.mt12 { margin-top: 12px; }
+.mb6 { margin-bottom: 6px; }
+.mr12 { margin-right: 12px; }
+.flex-1 { flex: 1; }
+
+.brand { text-align: center; line-height: 1.2; }
+.brand h1 { margin: 0; font-size: 18pt; font-weight: 800; }
+.brand .ruc { margin-top: 2px; font-weight: 700; }
+.brand .small { font-size: 9pt; margin-top: 2px; }
+.brand .addr { font-size: 9pt; }
+
+.factura-line { font-size: 12pt; font-weight: 700; }
+.factura-line .line {
+  display: inline-block;
+  min-width: 60mm;
+  border-bottom: 1px solid #0c1632;
+  transform: translateY(-2px);
+}
+
+.box-right { border: 1px solid #0c1632; padding: 4px 6px; min-width: 45mm; }
+.date-grid {
+  display: grid;
+  grid-template-columns: 1fr 8mm 8mm 12mm;
+  gap: 4px;
+  align-items: center;
+}
+.date-label { font-size: 9pt; font-weight: 700; text-align: right; padding-right: 4px; }
+.cell {
+  border: 1px solid #0c1632;
+  height: 8mm;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+
+.label-line { font-weight: 700; margin-right: 8px; }
+.line-fill {
+  flex: 1; border-bottom: 1px solid #0c1632; min-height: 7mm;
+  display: flex; align-items: center; padding: 0 6px;
+}
+
+.payment-box { min-width: 80px; }
+.check { width: 5mm; height: 5mm; border: 1px solid #0c1632; display: inline-block; margin-right: 6px; }
+.checked { background: #0c1632; }
+
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  background: #182a45; color: white; font-weight: 800; font-size: 10pt;
+  padding: 6px 8px; border: 1px solid #0c1632;
+}
+tbody td {
+  border: 1px solid #0c1632; padding: 6px 8px; font-size: 10pt; height: 12mm;
+}
+
+.col-qty { width: 16%; text-align: center; }
+.col-desc { width: 52%; }
+.col-unit { width: 16%; text-align: right; }
+.col-total { width: 16%; text-align: right; }
+
+.totals { margin-top: 6px; display: grid; grid-template-columns: 1fr 60mm; gap: 8px; }
+.tot-box { border: 1px solid #0c1632; }
+.tot-row { display: grid; grid-template-columns: 1fr 30mm; }
+.tot-row > div { border-bottom: 1px solid #0c1632; padding: 6px 8px; font-weight: 700; }
+.tot-row:last-child > div { border-bottom: none; }
+.tot-row .val { text-align: right; }
+
+.tot-final {
+  background: #182a45; color: #ffffff; font-weight: 900;
+  display: grid; grid-template-columns: 1fr 30mm;
+}
+.tot-final > div { padding: 8px; border-top: 1px solid #0c1632; }
+.tot-final .val { text-align: right; }
+
+.recibido { margin-top: 24mm; font-weight: 700; }
+.recibido .line {
+  display: inline-block; min-width: 60mm; border-bottom: 1px solid #0c1632;
+  transform: translateY(-2px);
+}

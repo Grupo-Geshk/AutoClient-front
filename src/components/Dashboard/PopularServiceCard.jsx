@@ -1,3 +1,4 @@
+// src/components/PopularServiceCard.jsx
 import { useEffect, useState } from "react"
 import { getTopServices } from "@/api/dashboard"
 import { Star } from "lucide-react" // o cualquier ícono representativo
